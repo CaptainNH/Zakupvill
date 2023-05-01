@@ -25,4 +25,6 @@ Route::post('/basket/add/{id}', [BasketController::class, 'basketAdd'])->name('b
 
 Route::post('/basket/remove/{id}', [BasketController::class, 'basketRemove'])->name('basket-remove');
 
+Route::post('/basket', [BasketController::class, 'basketConfirm'])->name('basket-confirm');
+
 Route::get('/suppliers/{code?}', [MainController::class, 'supplier'])->name('supplier');

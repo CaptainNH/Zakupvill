@@ -1,4 +1,4 @@
-@extends('basic')
+@extends('layouts.basic')
 
 @section('head')
     <title>Корзина</title>
@@ -59,38 +59,39 @@
                     <tr>
                         <td style="vertical-align: middle;">{{ $product->name }}</td>
                         <td style="vertical-align: middle;">
-                            <form action="{{ route('basket-remove', $product) }}" method="POST">
-                                <button class="btn btn-outline-secondary" href="#"
-                                    style="margin-right:20px; padding-top: 10px;">
-                                    <span class="material-icons material-icons-outlined">
-                                        remove
-                                    </span>
-                                </button>
-                                @csrf
-                            </form>
-
-                            <span>1</span>
-                            <form action="{{ route('basket-add', $product) }}" method="POST">
-                                <button type="submit" class="btn btn-outline-secondary" href="#"
-                                    style="margin-left: 20px; padding-top: 10px;">
-                                    <span class="material-icons material-icons-outlined">
-                                        add
-                                    </span>
-                                </button>
-                                @csrf
-                            </form>
+                            <div class="btn-group form-inline">
+                                <form action="{{ route('basket-remove', $product) }}" method="POST">
+                                    <button class="btn btn-outline-secondary" href="#"
+                                        style="margin-right:20px; padding-top: 10px;">
+                                        <span class="material-icons material-icons-outlined">
+                                            remove
+                                        </span>
+                                    </button>
+                                    @csrf
+                                </form>
+                                <span>{{ $product->pivot->count }}</span>
+                                <form action="{{ route('basket-add', $product) }}" method="POST">
+                                    <button type="submit" class="btn btn-outline-secondary" href="#"
+                                        style="margin-left: 20px; padding-top: 10px;">
+                                        <span class="material-icons material-icons-outlined">
+                                            add
+                                        </span>
+                                    </button>
+                                    @csrf
+                                </form>
+                            </div>
                         </td>
                         <td style="vertical-align: middle;">
                             <div class="">{{ $product->price }}</div>
                         </td>
-                        <td style="vertical-align: middle;">{{ $product->price }}</td>
+                        <td style="vertical-align: middle;">{{ $product->calcPrice() }}</td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
         <div class="row center" style="display: flex; justify-content: center; ">
             <div class="col-md-6" style="justify-content: center; border: 1px solid black;">
-                <p style="text-align: center; margin-bottom: 30px;">Итого: $60</p>
+                <p style="text-align: center; margin-bottom: 30px;">Итого: {{ $order->calcFullPrice() }}</p>
                 <div style="display: flex; justify-content: space-around; padding: 15px;">
                     <a href="{{ route('main') }}" class="btn btn-primary">Продолжить покупки</a>
                     <a href="#" class="btn btn-success open-modal">Оформить заказ</a>
@@ -105,11 +106,11 @@
     <div class="modal-container">
         <div class="modal-content">
             <span class="close" style="text-align: right;">&times;</span>
-            <h2>Заголовок модального окна</h2>
-            <p>Текст модального окна</p>
-            <form>
+            <h2>Оформление заказа</h2>
+            <p>Заполните данные:</p>
+            <form action="{{ route('basket-confirm') }}" method="POST">
                 <div class="form-group">
-                    <label for="title">Название:</label>
+                    <label for="title">Название организации:</label>
                     <input type="text" class="form-control" id="title" name="title" placeholder="Введите название">
                 </div>
                 <div class="form-group">
@@ -120,10 +121,10 @@
                     <label for="phone">Номер телефона:</label>
                     <div class="input-group">
                         <!-- <div class="input-group-prepend">
-                                                                                    <span class="input-group-text">+7</span>
-                                                                                  </div> -->
+                                                                                                                                                                                            <span class="input-group-text">+7</span>
+                                                                                                                                                                                          </div> -->
                         <input type="tel" class="form-control" id="phone" name="phone"
-                            placeholder="(123) 456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                            placeholder="+7 (123) 456-78-90" pattern="+7 ([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}" required>
                     </div>
                     <!-- <small class="form-text text-muted">Пример: 123-456-7890</small> -->
                 </div>
@@ -133,10 +134,11 @@
                 </div>
 
                 <!-- <div class="form-group">
-                                                                              <label for="message">Адрес:</label>
-                                                                              <textarea class="form-control" id="message" name="message" placeholder="Введите сообщение"></textarea>
-                                                                            </div> -->
+                                                                                                                                                                                      <label for="message">Адрес:</label>
+                                                                                                                                                                                      <textarea class="form-control" id="message" name="message" placeholder="Введите сообщение"></textarea>
+                                                                                                                                                                                    </div> -->
                 <button type="submit" class="btn btn-primary">Отправить</button>
+                @csrf
             </form>
         </div>
     </div>

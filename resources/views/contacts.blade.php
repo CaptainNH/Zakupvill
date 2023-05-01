@@ -1,9 +1,9 @@
-@extends('basic')
+@extends('layouts.basic')
 
 @section('head')
-<title>О нас</title>
+    <title>О нас</title>
 @endsection
 
 @section('content')
-О НАС
+    О НАС
 @endsection

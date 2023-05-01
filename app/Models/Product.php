@@ -13,4 +13,12 @@ class Product extends Model
     {
         return Supplier::find($this->supplier_id);
     }
+
+    public function calcPrice()
+    {
+        if (!is_null($this->pivot)) {
+            return $this->pivot->count * $this->price;
+        }
+        return $this->price;
+    }
 }

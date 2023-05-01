@@ -11,6 +11,31 @@ class Order extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class)->withPivot('count')->withTimestamps();
+    }
+
+    public function calcFullPrice()
+    {
+        $sum = 0;
+        foreach ($this->products as $product) {
+            $sum += $product->calcPrice();
+        }
+        return $sum;
+    }
+
+    public function saveOrder($org, $name, $phone, $address)
+    {
+        if ($this->status == 0) {
+            $this->organization_name = $org;
+            $this->contact_name = $name;
+            $this->phone_number = $phone;
+            $this->address = $address;
+            $this->status = 1;
+            $this->save();
+            session()->forget('orderId');
+            return true;
+        } else {
+            return false;
+        }
     }
 }

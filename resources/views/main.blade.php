@@ -1,4 +1,4 @@
-@extends('basic')
+@extends('layouts.basic')
 
 @section('head')
     <title>Document</title>
@@ -10,7 +10,7 @@
         @if ($count % 3 == 0 || $count == 0)
             <div class="row" style="margin-bottom: 5%">
         @endif
-        @include('card', compact('product'))
+        @include('layouts.card', compact('product'))
         @php $count++; @endphp
         @if ($count % 3 == 0)
             </div>

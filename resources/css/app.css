@@ -1,3 +1,7 @@
 #container {
     height: 100vh;
 }
+
+div.form-inline form {
+    display: inline;
+}
