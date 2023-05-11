@@ -33,7 +33,7 @@
                         <label for="name" class="col-sm-2 col-form-label">Название: </label>
                         <div class="col-sm-6">
                             <input type="text" class="form-control" name="name" id="name"
-                                value="@isset($product){{ $product->name }}@endisset">
+                                value="@isset($product){{ $product->name }}@endisset" required>
                         </div>
                     </div>
                     <br>
@@ -49,7 +49,7 @@
                         <label for="price" class="col-sm-2 col-form-label">Цена: </label>
                         <div class="col-sm-2">
                             <input type="number" class="form-control" name="price" id="price"
-                                value="@isset($product){{ $product->price }}@endisset">
+                                value="@isset($product){{ $product->price }}@endisset" required>
                         </div>
                     </div>
                     <br>
@@ -65,7 +65,7 @@
                         <label class="col-sm-2" for="image">Картинка:</label>
                         <div class="col-sm-10" style="width: 500px;">
                             <input class="form-control" type="file" name="image" placeholder="Картинка"
-                                accept=".png,.jpeg,.jpg,.webp" required>
+                                accept=".png,.jpeg,.jpg,.webp" @if (!@isset($product)) required @endif>
                         </div>
                     </div>
                     <br>
