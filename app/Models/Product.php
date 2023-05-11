@@ -4,10 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['supplier_id', 'name', 'description', 'warehouse', 'image', 'price'];
+    protected $guarded = [];
 
     public function getSupplier()
     {

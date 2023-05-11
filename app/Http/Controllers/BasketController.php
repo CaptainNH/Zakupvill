@@ -12,6 +12,8 @@ class BasketController extends Controller
         $orderId = session('orderId');
         if (!is_null($orderId)) {
             $order = Order::findOrFail($orderId);
+        } else {
+            return redirect(route('products'));
         }
         return view('basket', compact('order'));
     }

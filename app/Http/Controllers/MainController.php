@@ -10,18 +10,24 @@ class MainController extends Controller
 {
     public function main()
     {
-        $products = Product::get();
-        return view('main', compact('products'));
+        return view('main');
     }
 
-    public function contacts()
+    public function products()
     {
-        return view('contacts');
+        $products = Product::get();
+        return view('products', compact('products'));
     }
 
     public function supplier($code = null)
     {
         $supplierObj = Supplier::where('code', $code)->first();
         dd($supplierObj);
+    }
+
+    public function showProduct($productId)
+    {
+        $product = Product::find($productId);
+        return view('product', compact($product));
     }
 }

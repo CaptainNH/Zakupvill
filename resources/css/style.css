@@ -1,0 +1,114 @@
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #fff;
+    font-size: 15px;
+    /* line-height: 1.8; */
+    font-weight: 400;
+    color: gray;
+}
+
+
+
+/* Стили для основного контейнера модального окна */
+.modal-container {
+    /* display: none; */
+    /* Скрываем модальное окно по умолчанию */
+    position: fixed;
+    /* Окно должно оставаться на месте, даже если страница прокручивается */
+    z-index: 1;
+    /* Окно должно находиться поверх других элементов на странице */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Черный полупрозрачный фон */
+}
+
+/* Стили для контента модального окна */
+.modal-content {
+    background-color: #fff;
+    /* Белый фон контента */
+    margin: 7% auto 15% auto;
+    /* Отступ сверху и снизу, выравнивание по центру горизонтально */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    /* Ширина контента */
+}
+
+/* Стили для элемента закрытия модального окна */
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-group {
+    margin: 10px;
+}
+
+#btn-submit {
+    margin: 10px;
+    background-color: rgb(1, 158, 198);
+}
+
+
+/* img {
+     font-family: "Poppins", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8; 
+} */
+
+.provider {
+    /* color:rgb(1, 158, 198); */
+    margin-bottom: 10px;
+}
+
+.price {
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 20px;
+}
+
+/* transition: .3s all ease; */
+/* cursor: zoom-in; */
+
+nav {
+    height: 6vh;
+}
+
+.slider-item {
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    font-family: 'Amatic SC', cursive;
+    color: #fff;
+    text-align: center;
+}
+
+.overlay {
+    /* --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px; */
+    /* text-align: left; */
+    /* font-family: "Poppins", Arial, sans-serif; */
+    /* font-size: 15px; */
+    /* line-height: 1.8; */
+    /* font-weight: 400; */
+    /* color: gray; */
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    /* box-sizing: border-box; */
+    position: absolute;
+    top: 6vh;
+    bottom: 34vh;
+    left: 0;
+    right: 0;
+    background: #000000;
+    opacity: .3;
+}

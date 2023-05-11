@@ -38,4 +38,10 @@ class Order extends Model
             return false;
         }
     }
+
+    public function updateOrderStatus($status)
+    {
+        $this->status = $status;
+        $this->save();
+    }
 }
