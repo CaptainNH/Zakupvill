@@ -53,14 +53,14 @@
                         </div>
                     </div>
                     <br>
-                    {{-- <div class="input-group row">
-                        <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
-                        <div class="col-sm-10">
-                            <label class="btn btn-default btn-file">
-                                Загрузить <input type="file" style="display: none;" name="image" id="image">
-                            </label>
+                    <div class="input-group row">
+                        <label for="price" class="col-sm-2 col-form-label">Кол-во: </label>
+                        <div class="col-sm-2">
+                            <input type="number" class="form-control" name="count" id="count"
+                                value="@isset($product){{ $product->count }}@endisset" required>
                         </div>
-                    </div> --}}
+                    </div>
+                    <br>
                     <div class="form-group row">
                         <label class="col-sm-2" for="image">Картинка:</label>
                         <div class="col-sm-10" style="width: 500px;">

@@ -32,8 +32,6 @@ class BasketController extends Controller
         } else {
             session()->flash('failure', 'Ошибка');
         }
-
-
         return redirect(route('main'));
     }
 

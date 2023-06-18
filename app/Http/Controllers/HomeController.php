@@ -37,7 +37,8 @@ class HomeController extends Controller
     public function showOrder($orderId)
     {
         $order = Order::find($orderId);
-        return view('auth.order', compact('order'));
+        $products = $order->products()->withTrashed()->get();
+        return view('auth.order', compact('order', 'products'));
     }
 
     public function changeOrderStatus(Order $order, Request $request)

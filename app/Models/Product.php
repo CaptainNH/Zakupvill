@@ -10,7 +10,9 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['supplier_id', 'name', 'description', 'warehouse', 'image', 'price'];
+    use SoftDeletes;
+
+    protected $fillable = ['supplier_id', 'name', 'description', 'warehouse', 'image', 'price', 'count'];
     protected $guarded = [];
 
     public function getSupplier()
@@ -24,5 +26,10 @@ class Product extends Model
             return $this->pivot->count * $this->price;
         }
         return $this->price;
+    }
+
+    public function isAvailable()
+    {
+        return $this->count > 0;
     }
 }

@@ -8,6 +8,7 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Склад: {{ $product->warehouse }}</li>
             <li class="list-group-item">Цена: {{ $product->price }}</li>
+            <li class="list-group-item">Кол-во: {{ $product->count }}</li>
         </ul>
         <div class="card-body">
             <div style="display:flex; justify-content: space-around" class="btn-group form-inline">

@@ -91,7 +91,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($order->products as $product)
+                @foreach ($products as $product)
                     <tr data-href="{{ route('product-show', $product->id) }}">
                         <td style="vertical-align: middle;">{{ $product->id }}</td>
                         <td style="vertical-align: middle;">{{ $product->name }}</td>

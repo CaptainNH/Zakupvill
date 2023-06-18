@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Гриб-Оптовик</title>
+    <title>Закупвиль</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -26,7 +26,7 @@
 <body class="goto-here">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" style="margin-left: 180px; margin-right: 80px;">
-            <a class="navbar-brand" href="{{ route('main') }}">Гриб-Оптовик</a>
+            <a class="navbar-brand" href="{{ route('main') }}">Закупвиль</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -72,7 +72,7 @@
                 style="height: 100%">
 
                 <div class="col-md-12 ftco-animate text-center" style="z-index: 3;">
-                    <h1 class="" style="font-size: 100px; font-weight: 800;">Гриб-Оптовик</h1>
+                    <h1 class="" style="font-size: 100px; font-weight: 800;">Закупвиль</h1>
                     <h2 class="subheading" style="font-size: 40px; font-weight: 600; letter-spacing: 3px;">
                         помогаем поставщикам
                         и оптовым покупателям находить друг друга</h2>
@@ -130,7 +130,7 @@
 
                         <div class="mb-5 pr-5" style="margin-left: 11px;">
                             <!-- <div style="height: 20px;"></div> -->
-                            <h2 class="mb-2"> Я владелец ресторана </h2>
+                            <h2 class="mb-2"> Я поставщик </h2>
                             <div class="text-muted text-md">Личный кабинет и возможность добавить свои товары для
                                 всех</div>
                         </div>
@@ -143,7 +143,7 @@
     <div class="container">
         <footer class="py-2 bg-light">
             <div class="container">
-                <p class="m-0 text-center">© 2023 Название вашего сайта</p>
+                <p class="m-0 text-center">© 2023 Закупвиль</p>
             </div>
         </footer>
         @yield('modal')

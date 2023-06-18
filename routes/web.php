@@ -30,7 +30,11 @@ Route::post('/basket/remove/{id}', [BasketController::class, 'basketRemove'])->n
 
 Route::post('/basket', [BasketController::class, 'basketConfirm'])->name('basket-confirm');
 
-Route::get('/suppliers/{code?}', [MainController::class, 'supplier'])->name('supplier');
+// Route::get('/suppliers/{code?}', [MainController::class, 'supplier'])->name('supplier');
+
+Route::get('/suppliers', [MainController::class, 'suppliers'])->name('suppliers');
+
+Route::get('/about', [MainController::class, 'about'])->name('about');
 
 Auth::routes();
 

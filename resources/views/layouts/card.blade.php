@@ -13,7 +13,11 @@
         <div class="card-body">
             <form action="{{ route('basket-add', $product) }}" method="POST">
                 <!-- <a href="#" class="card-link">Another link</a> -->
-                <button type="submit" class="btn btn-success add-shopping-cart">Добавить в корзину</button>
+                @if ($product->isAvailable())
+                    <button type="submit" class="btn btn-success add-shopping-cart">Добавить в корзину</button>
+                @else
+                    <div class="btn btn-danger">Товар закончился</div>
+                @endif
                 @csrf
             </form>
         </div>

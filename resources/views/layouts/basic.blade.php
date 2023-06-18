@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" style="margin-left: 180px; margin-right: 80px;">
-            <a class="navbar-brand" href="{{ route('main') }}">Гриб-Оптовик</a>
+            <a class="navbar-brand" href="{{ route('main') }}">Закупвиль</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -30,13 +30,13 @@
                         <a class="nav-link" href="{{ route('products') }}">Товары</a>
                     </li>
                 </ul>
-                {{-- <form class="d-flex" role="search">
+                <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit"
                         style="margin-right: 20px; padding-top: 10px;"><span class="material-symbols-outlined">
                             search
                         </span></button>
-                </form> --}}
+                </form>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="btn btn-outline-success" href="{{ route('basket') }}"
@@ -64,7 +64,7 @@
     <div class="container">
         <footer class="py-2 bg-light">
             <div class="container">
-                <p class="m-0 text-center">© 2023 Название вашего сайта</p>
+                <p class="m-0 text-center">© 2023 Закупвиль</p>
             </div>
         </footer>
         @yield('modal')

@@ -19,6 +19,12 @@ class MainController extends Controller
         return view('products', compact('products'));
     }
 
+    public function suppliers()
+    {
+        $suppliers = Supplier::get();
+        return view('providers', compact('suppliers'));
+    }
+
     public function supplier($code = null)
     {
         $supplierObj = Supplier::where('code', $code)->first();
@@ -29,5 +35,10 @@ class MainController extends Controller
     {
         $product = Product::find($productId);
         return view('product', compact($product));
+    }
+
+    public function about()
+    {
+        return view('about');
     }
 }
