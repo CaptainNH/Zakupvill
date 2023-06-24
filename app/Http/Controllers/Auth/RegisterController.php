@@ -68,6 +68,9 @@ class RegisterController extends Controller
         return Supplier::create([
             'company_name' => $data['name'],
             'company_code' => $data['code'],
+            'address' => $data['address'],
+            'phone_number' => $data['phone_number'],
+            'description' => $data['description'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

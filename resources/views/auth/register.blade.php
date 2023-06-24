@@ -45,6 +45,54 @@
                             </div>
 
                             <div class="row mb-3">
+                                <label for="name" class="col-md-4 col-form-label text-md-end">Описание</label>
+                                <div class="col-md-6">
+                                    {{-- <textarea rows="5" class="form-control @error('name') is-invalid @enderror" name="description"
+                                        value="{{ old('name') }}" autocomplete="name" autofocus>
+                                    </textarea> --}}
+                                    <input id="description" type="text"
+                                        class="form-control @error('name') is-invalid @enderror" name="description"
+                                        value="{{ old('name') }}" autocomplete="name" autofocus>
+
+                                    {{-- @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror --}}
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="name" class="col-md-4 col-form-label text-md-end">Адрес</label>
+
+                                <div class="col-md-6">
+                                    <input id="address" type="text"
+                                        class="form-control @error('name') is-invalid @enderror" name="address"
+                                        value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="name" class="col-md-4 col-form-label text-md-end">Номер телефона</label>
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" id="phone" name="phone_number"
+                                        placeholder="+7 (123) 456-78-90" pattern="+7 ([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}"
+                                        required autofocus>
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
                                 <label for="email" class="col-md-4 col-form-label text-md-end">E-mail</label>
 
                                 <div class="col-md-6">

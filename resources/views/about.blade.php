@@ -23,9 +23,8 @@
             <div class="img-wrapper">
                 <img src="images/clients1.png" alt="">
             </div>
-            <div class="img-wrapper">
-                <img src="images/clients2.png" alt="">
-            </div>
+            {{-- <div class="img-wrapper" style="width: 5px">
+            </div> --}}
             <div class="img-wrapper">
                 <img src="images/clients3.jpg" alt="">
             </div>

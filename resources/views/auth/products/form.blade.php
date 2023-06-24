@@ -79,6 +79,12 @@
 </textarea>
                         </div>
                     </div>
+                    <div class="input-group row">
+                        <div class="col-sm-6">
+                            <input type="hidden" class="form-control" name="supplier_id" id="supplier_id"
+                                value="{{ Auth::id() }}" required>
+                        </div>
+                    </div>
                     <button class="btn btn-success">Сохранить</button>
                 </div>
             </form>

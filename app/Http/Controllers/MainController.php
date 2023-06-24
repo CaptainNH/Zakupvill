@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
@@ -13,10 +14,11 @@ class MainController extends Controller
         return view('main');
     }
 
-    public function products()
+    public function products($supplierId)
     {
-        $products = Product::get();
-        return view('products', compact('products'));
+        $products = Product::where('supplier_id', $supplierId)->get();
+        $order = Order::where('supplier_id', 0)->first();
+        return view('products', compact('products', 'order'));
     }
 
     public function suppliers()

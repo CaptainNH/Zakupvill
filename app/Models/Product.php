@@ -30,6 +30,10 @@ class Product extends Model
 
     public function isAvailable()
     {
+        $order = Order::where('status', 0)->first();
+        if ($order != null) {
+            return ($this->count > 0 && $order->supplier_id == $this->supplier_id);
+        }
         return $this->count > 0;
     }
 }

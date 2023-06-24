@@ -16,7 +16,8 @@
                 @if ($product->isAvailable())
                     <button type="submit" class="btn btn-success add-shopping-cart">Добавить в корзину</button>
                 @else
-                    <div class="btn btn-danger">Товар закончился</div>
+                    <button disabled class="btn btn-danger">Товар недоступен
+                    </button>
                 @endif
                 @csrf
             </form>

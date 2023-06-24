@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -30,7 +31,8 @@ class HomeController extends Controller
 
     public function orders()
     {
-        $orders = Order::where('status', '>=', 1)->get();
+        $matchThese = [['status', '>=', '1'], ['supplier_id', '=', Auth::id()]];
+        $orders = Order::where($matchThese)->get();
         return view('auth.orders', compact('orders'));
     }
 

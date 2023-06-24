@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class BasketController extends Controller
@@ -13,7 +14,7 @@ class BasketController extends Controller
         if (!is_null($orderId)) {
             $order = Order::findOrFail($orderId);
         } else {
-            return redirect(route('products'));
+            return redirect(route('suppliers'));
         }
         return view('basket', compact('order'));
     }
@@ -40,6 +41,9 @@ class BasketController extends Controller
         $orderId = session('orderId');
         if (is_null($orderId)) {
             $order = Order::create();
+            $product = Product::findOrFail($productId);
+            $order->supplier_id = $product->supplier_id;
+            $order->save();
             session(['orderId' => $order->id]);
         } else {
             $order = Order::find($orderId);
@@ -69,6 +73,11 @@ class BasketController extends Controller
                     $pivotRow->count--;
                     $pivotRow->update();
                 }
+            }
+            if ($order->products()->get()->count() < 1) {
+                Order::where('id', $orderId)->delete();
+                session()->forget('orderId');
+                return redirect(route('suppliers'));
             }
             return redirect()->route('basket');
         }

@@ -20,7 +20,9 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [MainController::class, 'main'])->name('main');
 
-Route::get('/products', [MainController::class, 'products'])->name('products');
+// Route::get('/products', [MainController::class, 'products'])->name('products');
+
+Route::get('/products/{supplier}', [MainController::class, 'products'])->name('products');
 
 Route::get('/basket', [BasketController::class, 'basket'])->name('basket');
 

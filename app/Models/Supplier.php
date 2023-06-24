@@ -20,6 +20,7 @@ class Supplier extends Authenticatable
         'address',
         'email',
         'password',
+        'description',
     ];
 
     protected $hidden = [

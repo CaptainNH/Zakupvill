@@ -10,7 +10,7 @@
         @if ($count % 3 == 0 || $count == 0)
             <div class="row" style="margin-bottom: 5%">
         @endif
-        @include('layouts.card', compact('product'))
+        @include('layouts.card', compact('product', 'order'))
         @php $count++; @endphp
         @if ($count % 3 == 0)
             </div>
