@@ -1,6 +1,7 @@
 <div class="col-md-4">
     <div class="card" style="width: 18rem;">
-        <img src="{{ Storage::url($product->image) }}" class="card-img-top" alt="...">
+        <img src="{{ Storage::url($product->image) }}" style="height: 286.4px; width:286.4px;" class="card-img-top"
+            alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ $product->name }}</h5>
             <p class="card-text">{{ $product->description }}</p>
