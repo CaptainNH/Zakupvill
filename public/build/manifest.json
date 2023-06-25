@@ -1,0 +1,17 @@
+{
+  "resources/css/style.css": {
+    "file": "assets/style-c418e753.css",
+    "isEntry": true,
+    "src": "resources/css/style.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-98c45d4d.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-3ea8b221.css",
+    "isEntry": true,
+    "src": "resources/sass/app.scss"
+  }
+}
