@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -33,10 +34,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $path = $request->file('image')->store('products');
-        $params = $request->all();
-        $params['image'] = $path;
-        Product::create($params);
+        $product = $request->validated();
+        $filename = $product['image']->getClientOriginalName();
+        $product['image']->move(Storage::path('/public/images/products/') . $filename);
+        // $params = $request->all();
+        $product['image'] = "/images/products" . $filename;
+        Product::create($product);
         return redirect()->route('products.index');
     }
 
