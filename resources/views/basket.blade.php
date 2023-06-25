@@ -4,6 +4,10 @@
     <title>Корзина</title>
     <style>
         /* Стили для основного контейнера модального окна */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
         .modal-container {
             display: none;
             /* Скрываем модальное окно по умолчанию */
@@ -122,8 +126,8 @@
                     <label for="phone">Номер телефона:</label>
                     <div class="input-group">
                         <!-- <div class="input-group-prepend">
-                                                                                                                                                                                                                                                                                                                            <span class="input-group-text">+7</span>
-                                                                                                                                                                                                                                                                                                                          </div> -->
+                                                                                                                                                                                                                                                                                                                                                <span class="input-group-text">+7</span>
+                                                                                                                                                                                                                                                                                                                                              </div> -->
                         <input type="tel" class="form-control" id="phone" name="phone"
                             placeholder="+7 (123) 456-78-90" pattern="+7 ([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}" required>
                     </div>
@@ -135,9 +139,9 @@
                 </div>
 
                 <!-- <div class="form-group">
-                                                                                                                                                                                                                                                                                                                      <label for="message">Адрес:</label>
-                                                                                                                                                                                                                                                                                                                      <textarea class="form-control" id="message" name="message" placeholder="Введите сообщение"></textarea>
-                                                                                                                                                                                                                                                                                                                    </div> -->
+                                                                                                                                                                                                                                                                                                                                          <label for="message">Адрес:</label>
+                                                                                                                                                                                                                                                                                                                                          <textarea class="form-control" id="message" name="message" placeholder="Введите сообщение"></textarea>
+                                                                                                                                                                                                                                                                                                                                        </div> -->
                 <button style="margin-top: 5px" type="submit" class="btn btn-success">Отправить</button>
                 @csrf
             </form>
