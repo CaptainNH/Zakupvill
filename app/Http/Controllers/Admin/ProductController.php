@@ -34,7 +34,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = $request->validated();
+        $product = $request->all();
         $filename = $product['image']->getClientOriginalName();
         $product['image']->move(Storage::path('/public/images/products/') . $filename);
         // $params = $request->all();
