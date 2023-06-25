@@ -38,7 +38,7 @@
                         <a class="nav-link" aria-current="page" href="{{ route('main') }}">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('suppliers') }}">Товары</a>
+                        <a class="nav-link" href="{{ route('all-products') }}">Товары</a>
                     </li>
                 </ul>
                 {{-- <form class="d-flex" role="search">
@@ -96,7 +96,7 @@
                     </div>
                 </a>
 
-                <a href="/suppliers">
+                <a href="/products/all">
                     <div class="d-flex align-items-center" style="height: 160px;">
                         <img src="images/cart.png" alt="" style="padding-bottom: 30px;">
 

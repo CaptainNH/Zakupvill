@@ -14,10 +14,16 @@ class MainController extends Controller
         return view('main');
     }
 
+    public function allProducts()
+    {
+        $products = Product::get();
+        return view('products', compact('products'));
+    }
+
     public function products($supplierId)
     {
         $products = Product::where('supplier_id', $supplierId)->get();
-        $order = Order::where('supplier_id', 0)->first();
+        $order = Order::where('status', 0)->first();
         return view('products', compact('products', 'order'));
     }
 

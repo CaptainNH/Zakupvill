@@ -23,7 +23,7 @@ Route::get('/', [MainController::class, 'main'])->name('main');
 
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
-// Route::get('/products', [MainController::class, 'products'])->name('products');
+Route::get('/products/all', [MainController::class, 'allProducts'])->name('all-products');
 
 Route::get('/products/{supplier}', [MainController::class, 'products'])->name('products');
 
