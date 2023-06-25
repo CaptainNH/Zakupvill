@@ -38,7 +38,7 @@ class ProductController extends Controller
         $filename = $product['image']->getClientOriginalName();
         $product['image']->move(Storage::path('/public/images/products/') . $filename);
         // $params = $request->all();
-        $product['image'] = "/images/products" . $filename;
+        $product['image'] = "/images/products/" . $filename;
         Product::create($product);
         return redirect()->route('products.index');
     }
