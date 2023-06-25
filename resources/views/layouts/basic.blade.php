@@ -30,8 +30,9 @@
                         <a class="nav-link" href="{{ route('suppliers') }}">Товары</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form action="{{ route('search') }}" class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" name="q" placeholder="Search"
+                        aria-label="Search">
                     <button class="btn btn-outline-success" type="submit"
                         style="margin-right: 20px; padding-top: 10px;"><span class="material-symbols-outlined">
                             search

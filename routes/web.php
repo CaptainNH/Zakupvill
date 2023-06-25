@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [MainController::class, 'main'])->name('main');
+
+Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 // Route::get('/products', [MainController::class, 'products'])->name('products');
 
