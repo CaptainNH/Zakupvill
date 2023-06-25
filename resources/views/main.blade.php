@@ -119,7 +119,7 @@
                         <div class="mb-5 pr-5" style="margin-left: 11px;">
                             <!-- <div style="height: 20px;"></div> -->
                             <h2 class="mb-2"> О нас </h2>
-                            <div class="text-muted text-md">Узнайте больше о веб-ресурсе "Гриб-Оптовик"</div>
+                            <div class="text-muted text-md">Узнайте больше о веб-ресурсе "Закупвиль"</div>
                         </div>
                     </div>
 
