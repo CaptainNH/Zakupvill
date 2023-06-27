@@ -3,7 +3,7 @@
     <title>Мои товары</title>
     <style>
         tr:hover {
-            background-color: #fbbb3b;
+            background-color: #bcf5bc;
         }
 
         /* Стили для основного контейнера модального окна */

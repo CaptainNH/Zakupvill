@@ -31,6 +31,7 @@ class Order extends Model
             $this->phone_number = $phone;
             $this->address = $address;
             $this->status = 1;
+            $this->pivot->count--;
             $this->save();
             session()->forget('orderId');
             return true;

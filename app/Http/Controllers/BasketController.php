@@ -42,6 +42,8 @@ class BasketController extends Controller
         if (is_null($orderId)) {
             $order = Order::create();
             $product = Product::findOrFail($productId);
+            $product->count--;
+            $product->save();
             $order->supplier_id = $product->supplier_id;
             $order->save();
             session(['orderId' => $order->id]);
@@ -50,9 +52,14 @@ class BasketController extends Controller
         }
 
         if ($order->products->contains($productId)) {
-            $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
-            $pivotRow->count++;
-            $pivotRow->update();
+            if ($order->products()->where('product_id', $productId)->first()->count > 0) {
+                $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
+                $pivotRow->count++;
+                $pivotRow->update();
+                $product = $order->products()->where('product_id', $productId)->first();
+                $product->count--;
+                $product->save();
+            }
         } else {
             $order->products()->attach($productId);
         }
@@ -67,6 +74,9 @@ class BasketController extends Controller
             $order = Order::find($orderId);
             if ($order->products->contains($productId)) {
                 $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
+                $product = $order->products()->where('product_id', $productId)->first();
+                $product->count++;
+                $product->save();
                 if ($pivotRow->count < 2) {
                     $order->products()->detach($productId);
                 } else {
